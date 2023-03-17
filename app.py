@@ -1,4 +1,4 @@
-"""An Nmap Scanner and Parser."""
+
 
 import xmltodict
 from subprocess import run
@@ -9,13 +9,13 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     """Return the main page."""
-    return "Nmap Scanner, a more sofisticated page is coming soon."
+    return "Nmap Scanner, a more sofisticated page is coming."
 
 
 @app.route('/openports')
 def scan_localhost():
     """Scan a host with Nmap."""
-    # run nmap scan from another proccess
+    
     target='google.com'
     run(['nmap', '-T5', '--open', '-oX', 'scan.xml', target])
 
