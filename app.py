@@ -16,7 +16,8 @@ def index():
 def scan_localhost():
     """Scan a host with Nmap."""
     # run nmap scan from another proccess
-    run(['nmap', '-T5', '--open', '-oX', 'scan.xml', 'nokia.com'])
+    target='google.com'
+    run(['nmap', '-T5', '--open', '-oX', 'scan.xml', target])
 
     # parse Nmap XML report and covert it to a dictionary
     with open('scan.xml') as raw_xml:
